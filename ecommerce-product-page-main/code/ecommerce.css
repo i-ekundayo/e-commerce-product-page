@@ -33,11 +33,22 @@ del{
     align-items: center;
     width: 60%;
 }
+.menu{
+    align-self: flex-end;
+    display: none;
+}
 .lists{
     display: flex;
     width: 65%;
     justify-content: space-between;
     color: hsl(219, 9%, 45%);
+}
+.closeList{
+    position: absolute;
+    left: 30px;
+    top: 35px;
+    filter: brightness(0) invert(0.4);
+    display: none;
 }
 .listItems{
     position: relative;
@@ -369,7 +380,7 @@ del{
 }
 @media(max-width:600px){
     body{
-        padding: 0;
+        padding: 0px;
     }
     #mainHeader{
         padding: 20px 30px;
@@ -377,12 +388,48 @@ del{
     }
     .mainHeader{
         position: relative;
+        justify-content: flex-start;
+    }
+    .show{
+        opacity: 0.25;
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        z-index: 1;
+    }
+    .menu{
+        display: flex;
+        margin-right: 20px;
+    }
+    .menu:hover{
+        cursor: pointer;
     }
     .lists{
         flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
         background-color: hsl(0, 0%, 100%);
-        position: absolute;
+        position: fixed;
+        top: 0;
         height: 100%;
+        padding-top: 80px;
+        margin-left: -30px;
+        z-index: 2;
+        display: none;
+    }
+    .closeList{
+        display: flex;
+    }
+    .closeList:hover{
+        cursor: pointer;
+    }
+    .listItems{
+        margin-bottom: 20px;
+        margin-left: 30px;
+        color: black;
+    }
+    .listItems::before{
+        top: 20px;
     }
     #sneaker{
         flex-direction: column;
@@ -416,7 +463,5 @@ del{
         bottom: -210px;
         right: 10px;
     }
-    .lightBoxBackground{
-        
-    }
+
 }

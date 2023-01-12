@@ -189,6 +189,16 @@ close.addEventListener('click', (e) => {
     lightBoxBackground.style.display = 'none';
 })
 
-for(let i=0; i<bigImg.length; i++){
-    
-}
+// working on the menu icon
+const menu = document.querySelector('.menu');
+menu.addEventListener('click', (e) => {
+    document.querySelector('.lists').style.display = 'flex';
+    document.querySelector('body').classList.add('show');
+})
+
+// working on the closeList icon
+const closeList = document.querySelector('.closeList');
+closeList.addEventListener('click', (e) => {
+    document.querySelector('.lists').style.display = 'none';
+    document.querySelector('body').classList.remove('show');
+})
