@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecommerce product page</title>
+    <link rel="stylesheet" type="text/css" href="ecommerce.css">
+</head>
+<body>
+    <header id="mainHeader">
+        <div class="mainHeader">
+            <img src="../images/logo.svg" alt="logoIcon" class="logo">
+            <ul class="lists">
+                <li class="listItems">Collections</li>
+                <li class="listItems">Men</li>
+                <li class="listItems">Women</li>
+                <li class="listItems">About</li>
+                <li class="listItems">Contact</li>
+            </ul>
+        </div>
+        <div class="profile">
+            <div class="Cart">
+                <div class="cartNumber"></div>
+                <img src="../images/icon-cart.svg" alt="cartIcon" class="cart">
+            </div>
+            <img src="../images/image-avatar.png" alt="avatarImage" class="avatar">
+        </div> 
+        <div class="cartBox dNone">
+            <div class="cartHeader">Cart</div>
+            <div class="cartContent">Your cart is empty</div>
+            <div class="cartImage">
+                <img src="../images/image-product-1-thumbnail.jpg" class="cartBoxImage">
+                <div class="cartText">
+                    <p>Fall Limited Edition Sneakers</p>
+                    <div class="cartPrice">
+                        <p>$125.00 x </p>
+                        <div class="numberOfProducts"></div>
+                        <div class="totalPrice"></div>
+                    </div>
+                </div>
+                <img src="../images/icon-delete.svg" class="delete" alt="deleteIcon">
+            </div>
+            <button class="checkout">Checkout</button>
+        </div>
+    </header>
+
+    <div id="sneaker">
+        <div class="sneakerImage">
+            <div class="mainImage">
+                <img src="../images/image-product-1.jpg" alt="bigImage">
+            </div>
+            <div class="thumbnail">
+                <div class="image" id="image1">
+                    <img src="../images/image-product-1-thumbnail.jpg" alt="product1">
+                </div>
+                <div class="image" id="image2">
+                    <img src="../images/image-product-2-thumbnail.jpg" alt="product2">
+                </div>
+                <div class="image" id="image3">
+                    <img src="../images/image-product-3-thumbnail.jpg" alt="product3">
+                </div>
+                <div class="image" id="image4">
+                    <img src="../images/image-product-4-thumbnail.jpg" alt="product4">
+                </div>
+            </div>
+        </div>
+        <div class="sneakerText">
+            <h6>SNEAKER COMPANY</h6>
+            <h1>Fall Limited Edition Sneakers</h1>
+            <br>
+            <p>These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they'll withstand everything the weather can offer.</p>
+            <br>
+            <div class="price">
+                <div class="discount">
+                    <h2>$125.00</h2>
+                    <h6>50%</h6>
+                </div>
+                <del><p>250.00</p></del>
+            </div>
+            <br>
+            <div class="productNumber">
+                <div class="number">
+                    <img src="../images/icon-minus.svg" alt="minusIcon" id="decrement">
+                    <input type="tel" class="numberValue" value="0">
+                    <img src="../images/icon-plus.svg" alt="plusIcon" id="increment">
+                </div>
+                <button class="addToCart"><img src="../images/icon-cart.svg" alt="cartIcon">Add to cart</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="mainImages">
+        <img src="../images/image-product-1.jpg" class="bigImg" alt="bigImg">
+        <img src="../images/image-product-2.jpg" class="bigImg" alt="bigImg">
+        <img src="../images/image-product-3.jpg" class="bigImg" alt="bigImg">
+        <img src="../images/image-product-4.jpg" class="bigImg" alt="bigImg">
+    </div>
+
+    <div class="lightBoxBackground">
+        <div class="lightBox">
+            <div class="lightBoxIcon">
+                <img src="../images/icon-close.svg" class="close" alt="closeIcon">
+                <div class = "lightBoxMainImage">
+                    <img src="../images/image-product-1.jpg" alt="bigImage">
+                </div>
+                <div class="prev"><img src="../images/icon-previous.svg" alt="previousIcon"></div>
+                <div class="next"><img src="../images/icon-next.svg" alt="nextIcon"></div>
+            </div>
+            <div class="lightBoxThumbnail">
+                <div class="lightBoxImage" id="lightBoxImage1">
+                    <img src="../images/image-product-1-thumbnail.jpg" alt="product1">
+                </div>
+                <div class="lightBoxImage" id="lightBoxImage2">
+                    <img src="../images/image-product-2-thumbnail.jpg" alt="product2">
+                </div>
+                <div class="lightBoxImage" id="lightBoxImage3">
+                    <img src="../images/image-product-3-thumbnail.jpg" alt="product3">
+                </div>
+                <div class="lightBoxImage" id="lightBoxImage4">
+                    <img src="../images/image-product-4-thumbnail.jpg" alt="product4">
+                </div>
+            </div>
+        </div>   
+    </div>
+    <script src="ecommerce.js"></script>
+</body>
+</html>
