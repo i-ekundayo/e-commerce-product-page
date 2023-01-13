@@ -192,13 +192,14 @@ close.addEventListener('click', (e) => {
 // working on the menu icon
 const menu = document.querySelector('.menu');
 menu.addEventListener('click', (e) => {
-    document.querySelector('.lists').style.display = 'flex';
-    document.querySelector('body').classList.add('show');
+    document.querySelector('.positionList').style.display = 'flex';
+    lightBoxBackground.style.display = 'flex';
+    document.querySelector('.lightBox').style.display = 'none';
 })
 
 // working on the closeList icon
 const closeList = document.querySelector('.closeList');
 closeList.addEventListener('click', (e) => {
-    document.querySelector('.lists').style.display = 'none';
-    document.querySelector('body').classList.remove('show');
+    document.querySelector('.positionList').style.display = 'none';
+    lightBoxBackground.style.display = 'none';
 })
