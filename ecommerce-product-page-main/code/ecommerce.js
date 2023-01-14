@@ -30,68 +30,38 @@ Array.from(image).forEach((el) => {
 });
 
 // working on changing the main image and lightbox
-const lightBoxImage = document.querySelectorAll('.lightBoxImage');
-const lightBoxImg = document.querySelectorAll('.lightBoxImage img');
 const mainImage = document.querySelector('.mainImage img');
 const bigImg = document.querySelectorAll('.bigImg');
         
-
 for(let i=0; i<img.length; i++) {
     img[i].addEventListener('click', (e) => {
         mainImage.src = bigImg[i].src;
+    })
+}
 
-        // // working on setting the corresponding border and opacity of the thumbnail images
-        // function borderChange(){
-        //     Array.from(lightBoxImg).forEach((im) => {
-        //         Array.from(lightBoxImage).forEach((el) => {
-        //             el.style.border = 'none';
-        //             im.style.opacity = '1';
-        //         })
-        //         im.addEventListener('mouseenter', (e) => {
-        //             im.style.opacity = '0.7';
-        //         })
-        //         im.addEventListener('mouseleave', (e) => {
-        //             im.style.opacity = '1';
-        //         })
-        //     })
-        //     lightBoxImage[newIndex].style.border = '2px solid hsl(26, 100%, 55%)';
-        //     lightBoxImg[newIndex].style.opacity = '0.4';
-        //     lightBoxImg[newIndex].addEventListener('mouseenter', (e) => {
-        //         lightBoxImg[newIndex].style.opacity = '0.4';
-        //     })
-        //     lightBoxImg[newIndex].addEventListener('mouseleave', (e) => {
-        //         lightBoxImg[newIndex].style.opacity = '0.4';
-        //     })
-        // }
-        borderChange(i);
-
-        // // working on the previous and next button of the lightBox
-        // const prev = document.querySelector('.lightBoxPrev');
-        // const next = document.querySelector('.lightBoxNext');
-        // prev.addEventListener('click', (e) => {
-        //     newIndex--;
-        //     if(newIndex < 0){
-        //         newIndex = bigImg.length-1;
-        //         lightBoxMainImage.src = bigImg[newIndex].src;
-        //         borderChange();
-        //     }
-        //     else{
-        //         lightBoxMainImage.src = bigImg[newIndex].src;
-        //         borderChange();
-        //     }
-        // })
-        // next.addEventListener('click', (e) => {
-        //     newIndex++;
-        //     if(newIndex > bigImg.length-1){
-        //         newIndex = 0;
-        //         lightBoxMainImage.src = bigImg[newIndex].src;
-        //         borderChange();
-        //     }
-        //     else{
-        //         lightBoxMainImage.src = bigImg[newIndex].src;
-        //         borderChange();
-        //     }
-        // })
+// working on setting the corresponding border and opacity of the thumbnail images
+const lightBoxImage = document.querySelectorAll('.lightBoxImage');
+const lightBoxImg = document.querySelectorAll('.lightBoxImage img');
+function borderChange(newIndex){
+    Array.from(lightBoxImg).forEach((im) => {
+        Array.from(lightBoxImage).forEach((el) => {
+            el.style.border = 'none';
+            im.style.opacity = '1';
+        })
+        im.addEventListener('mouseenter', (e) => {
+            im.style.opacity = '0.7';
+        })
+        im.addEventListener('mouseleave', (e) => {
+            im.style.opacity = '1';
+        })
+    })
+    lightBoxImage[newIndex].style.border = '2px solid hsl(26, 100%, 55%)';
+    lightBoxImg[newIndex].style.opacity = '0.4';
+    lightBoxImg[newIndex].addEventListener('mouseenter', (e) => {
+        lightBoxImg[newIndex].style.opacity = '0.4';
+    })
+    lightBoxImg[newIndex].addEventListener('mouseleave', (e) => {
+        lightBoxImg[newIndex].style.opacity = '0.4';
     })
 }
 
@@ -178,12 +148,21 @@ const lightBoxBackground = document.querySelector('.lightBoxBackground');
 const lightBoxMainImage = document.querySelector('.lightBoxMainImage img');
 mainImage.addEventListener('click' , (e) => {
     lightBoxBackground.style.display = 'flex';
+    img.forEach((el) => {
+        if(el.style.opacity == '0.4'){
+            let selectedImg = Array.from(img).indexOf(el);
+            borderChange(selectedImg);
+        }
+    })
     for(let i=0; i<img.length; i++) {
         lightBoxMainImage.src = mainImage.src;
+        if(mainImage.src == bigImg[0].src){
+            borderChange(0);
+        }
     }
 })
 
-// working on the close icon
+// working on the lightbox close icon
 const close = document.querySelector('.close');
 close.addEventListener('click', (e) => {
     lightBoxBackground.style.display = 'none';
@@ -197,69 +176,17 @@ menu.addEventListener('click', (e) => {
     document.querySelector('.lightBox').style.display = 'none';
 })
 
-// working on the closeList icon
+// working on the list close icon
 const closeList = document.querySelector('.closeList');
 closeList.addEventListener('click', (e) => {
     document.querySelector('.positionList').style.display = 'none';
     lightBoxBackground.style.display = 'none';
 })
 
-// working on the previous and next button of the mobile view
+// working on the previous and next button
 const prev = document.querySelectorAll('.prev');
 const next = document.querySelectorAll('.next');
-
-// working on setting the corresponding border and opacity of the thumbnail images
-function borderChange(newIndex){
-    Array.from(lightBoxImg).forEach((im) => {
-        Array.from(lightBoxImage).forEach((el) => {
-            el.style.border = 'none';
-            im.style.opacity = '1';
-        })
-        im.addEventListener('mouseenter', (e) => {
-            im.style.opacity = '0.7';
-        })
-        im.addEventListener('mouseleave', (e) => {
-            im.style.opacity = '1';
-        })
-    })
-    lightBoxImage[newIndex].style.border = '2px solid hsl(26, 100%, 55%)';
-    lightBoxImg[newIndex].style.opacity = '0.4';
-    lightBoxImg[newIndex].addEventListener('mouseenter', (e) => {
-        lightBoxImg[newIndex].style.opacity = '0.4';
-    })
-    lightBoxImg[newIndex].addEventListener('mouseleave', (e) => {
-        lightBoxImg[newIndex].style.opacity = '0.4';
-    })
-}
-
-// working on the previous and next button of the lightBox
-// prev.addEventListener('click', (e) => {
-//     newIndex--;
-//     if(newIndex < 0){
-//         newIndex = bigImg.length-1;
-//         lightBoxMainImage.src = bigImg[newIndex].src;
-//         borderChange();
-//     }
-//     else{
-//         lightBoxMainImage.src = bigImg[newIndex].src;
-//         borderChange();
-//     }
-// })
-// next.addEventListener('click', (e) => {
-//     newIndex++;
-//     if(newIndex > bigImg.length-1){
-//         newIndex = 0;
-//         lightBoxMainImage.src = bigImg[newIndex].src;
-//         borderChange();
-//     }
-//     else{
-//         lightBoxMainImage.src = bigImg[newIndex].src;
-//         borderChange();
-//     }
-// })
-
 let i = 1;
-
 prev.forEach((previous) => {
     previous.addEventListener('click', (e) => {
         i--;

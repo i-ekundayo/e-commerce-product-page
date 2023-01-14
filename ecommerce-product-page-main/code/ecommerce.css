@@ -43,6 +43,9 @@ del{
     justify-content: space-between;
     color: hsl(219, 9%, 45%);
 }
+.positionList{
+    display: none;
+}
 .listItems{
     position: relative;
 }
@@ -183,6 +186,9 @@ del{
 .mainImage img{
     width: 100%;
     height: 50vh;
+}
+.mainImage:hover{
+    cursor: pointer;
 }
 .thumbnail{
     display: flex;
@@ -406,7 +412,6 @@ del{
         width: 65%;
         padding-top: 80px;
         z-index: 2;
-        display: none;
     }
     .closeList{
         position: absolute;
@@ -474,6 +479,7 @@ del{
         height: 200px;
         bottom: -210px;
         right: 10px;
+        z-index: 1;
     }
     .lightBoxBackground{
         margin: 0px;
