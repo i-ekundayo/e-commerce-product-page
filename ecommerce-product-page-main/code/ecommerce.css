@@ -447,10 +447,10 @@ del{
     .prev img, .next img{
         margin-top: 20px;
     }
-    .prev{
+    .mobilePrev{
         left: 15px;
     }
-    .next{
+    .mobileNext{
         right: 15px;
     }
     .thumbnail{
